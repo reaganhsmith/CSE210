@@ -21,21 +21,43 @@ class Program
         string grade = Console.ReadLine();
         int gradeNumber = int.Parse(grade);
 
-        if (gradeNumber >= 90)
+        string gradeSecond = grade.Substring(1);
+        int gradeSecNum = int.Parse(gradeSecond);
+
+        string letter = " "; 
+        string symbol = " ";
+
+        if (gradeSecNum >= 7){
+            symbol = "+";
+        }
+        else{
+            symbol = "-";
+        }
+        if (gradeNumber >= 94)
         {
-            Console.WriteLine("Congrats you have an A, you will pass the class!");
+            letter = "A"; 
+            Console.WriteLine($"Congrats you have an {letter}, you will pass the class!");
+        }
+        else if (gradeNumber <= 93)
+        {
+            letter = "A"; 
+            Console.WriteLine($"Congrats you have an {letter}{symbol}, you will pass the class!");
         }
         else if (gradeNumber >= 80){
-            Console.WriteLine("Congrats you have an B, you will pass the class!");    
+            letter = "B"; 
+            Console.WriteLine($"Congrats you have an {letter}{symbol}, you will pass the class!");  
         }
         else if (gradeNumber >= 70){
-            Console.WriteLine("Congrats you have an C, you will pass the class!");    
+            letter = "A"; 
+            Console.WriteLine($"Congrats you have an {letter}{symbol}, you will pass the class!");    
         }
         else if (gradeNumber >= 60){
+            letter = "A"; 
             Console.WriteLine("You have a D, you will NOT pass the class. Better luck next time");    
         }
         else
         {
+            letter = "A"; 
              Console.WriteLine("You have a F, you will NOT pass the class. Better luck next time"); 
         }
 
