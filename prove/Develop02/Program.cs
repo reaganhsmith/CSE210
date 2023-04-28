@@ -7,29 +7,25 @@ class Program
         Console.WriteLine(" ");
         Console.WriteLine("Welcome to your journal");
 
-
         int userInput = 0;
 
-        List<string> writingPrompt = new List<string>{
-        "What is the happiest moment from today?",
-        "How could today of been better?",
-        "What was something that scared you today?",
-        "How did you serve someone today?",
-        "What was the best thing to happen today?", 
-        "What or who made you feel special today?"};
 
-                List<string> journalEntries = new List<string>();
+    List<string> menu = new List<string>{
+        "Please select what you would like to do.",
+        "1. Write",
+        "2. Display",
+        "3. Save",
+        "4. Load",
+        "5. Quit",
+        "What do you want to do: "
+    };
 
 
     while (userInput != 5){
-            Console.WriteLine(" ");
-            Console.WriteLine("Please select what you would like to do.");
-            Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Save");
-            Console.WriteLine("4. Load");
-            Console.WriteLine("5. Quit");
-            Console.Write("What do you want to do: ");
+
+            foreach(string menuItem in menu){
+                Console.WriteLine(menuItem);
+            }
             string input = Console.ReadLine();
             userInput = int.Parse(input);
 

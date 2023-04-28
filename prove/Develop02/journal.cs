@@ -11,7 +11,7 @@ public void addEntry(){
         "How could today of been better?",
         "What was something that scared you today?",
         "How did you serve someone today?",
-        "What was the best thing to happen today?", 
+        "How did I see Gods hand today?", 
         "What or who made you feel special today?"};   
 
         Random random = new Random();
@@ -30,31 +30,32 @@ public void addEntry(){
 
 
 public void saveJournal(){
-    Console.WriteLine("What do you want to name the file? (add .txt to the end)");
+    Console.WriteLine("What do you want to name the file? (add .txt to the end) ");
     string fileName = Console.ReadLine(); 
 
-    using (StreamWriter outputFile = new StreamWriter(fileName))
-{
-    // You can add text to the file with the WriteLine method
-    outputFile.WriteLine();
+    
+        using (StreamWriter outputFile = new StreamWriter(fileName)){
+            foreach(entry entry in entries){
+                entry.display();
+            }
+              }
 }
-}
+
 
 public void displayJournal(){
 
-    // string[] lines = System.IO.File.ReadAllLines(fileName);
-
-    // foreach (string line in lines)
-    // {
-    //     string[] parts = line.Split(",");
-
-    //     string firstName = parts[0];
-    //     string lastName = parts[1];
-    // }
+    foreach (entry entry in entries){
+        entry.display();
+    }
 
 }
 
 public void loadJournal(){
+    Console.WriteLine("What is the filename? (add .txt to the end) ");
+    string fileName = Console.ReadLine(); 
+
+    string lines = System.IO.File.ReadAllText(fileName);
+    Console.WriteLine(lines);
 
 }
 } 

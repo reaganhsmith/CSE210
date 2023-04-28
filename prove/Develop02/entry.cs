@@ -6,7 +6,7 @@ public class entry{
     public string _prompt;
     public DateTime _date;
 
-    public void displayEntry(){
+    public void display(){
         Console.WriteLine($"Date {_date}: {_prompt}: {_response}");
     }
 }
