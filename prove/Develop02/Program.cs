@@ -20,7 +20,14 @@ class Program
         "What do you want to do: "
     };
 
+     List<string> save = new List<string>{
+                " ",
+        "Do you want to write a new file or add to an existing one?",
+        "1. New file",
+        "2. Existing file"
+        };
 
+    Journal journal = new Journal();
     while (userInput != 5){
 
             foreach(string menuItem in menu){
@@ -29,11 +36,11 @@ class Program
             string input = Console.ReadLine();
             userInput = int.Parse(input);
 
-            Journal journal = new Journal();
+            
         if (userInput == 1){
 
-            journal.addEntry();
 
+        journal.addEntry();
             }
         
         if (userInput == 2){
@@ -42,8 +49,20 @@ class Program
 
         }
         if (userInput == 3){
+           
 
-            journal.saveJournal();
+        foreach (string item in save){
+            Console.WriteLine(item);
+        }
+
+        string choice = Console.ReadLine();
+        int userChoice = int.Parse(choice);
+
+        if(userChoice == 1){
+            journal.saveJournal();}
+            else{
+                journal.saveExistingFile();
+            }
 
         }
         if (userInput == 4){
