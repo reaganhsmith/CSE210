@@ -7,7 +7,7 @@ public class Word
     private bool _isHidden;
 
     public Word(string word){
-        word = _word;
+        _word = word;
     }
 
     public bool GetIsHidden(){
