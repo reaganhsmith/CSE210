@@ -48,7 +48,7 @@ public bool HasWordsLeft(){
 }
 
 public void RemoveWords(){
-    int numWordsToRemove = new Random().Next(1,5);
+    int numWordsToRemove = new Random().Next(2,4);
     int wordsRemoved = 0;
 
     do
