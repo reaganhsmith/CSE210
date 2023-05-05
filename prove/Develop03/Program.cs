@@ -7,7 +7,7 @@ class Program
     {
 
         string playAgain = "yes";
-        // string userInput = " ";
+
         while(playAgain.ToLower() == "yes"){
             // this gets info from the refernce class (book, chapter, start verse, end verse(this can be left empty))
             Reference scriptureReference = new Reference("Proverbs", "3", "4", "5");
