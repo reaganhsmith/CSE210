@@ -42,7 +42,7 @@ public class Listing : Activity{
         Console.WriteLine("Please consider the following prompt:");
         Console.WriteLine(" ");
     Console.Clear();
-        Console.WriteLine("List how many respnses you can to the following prompt:");    
+        Console.WriteLine("List how many responses you can to the following prompt:");    
         _askPonder();
         Console.WriteLine(" ");
         Console.Write("You may begin in:   ");
@@ -66,9 +66,6 @@ public class Listing : Activity{
 
             Console.WriteLine(" ");
 
-            // foreach(string item in _response){
-            //     Console.WriteLine(item);
-            // }
             int numberOfItems = _response.Count;
             Console.WriteLine($"You have {numberOfItems} on your list");
             Console.WriteLine("Would you like to add anymore items to the list (Y or N)?");
