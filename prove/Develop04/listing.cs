@@ -59,15 +59,48 @@ public class Listing : Activity{
         
         while (DateTime.Now < endTime)
             {
-            string usersResponse = Console.ReadLine();
-            _response.Add(usersResponse);
+                Console.Write("> ");
+                string usersResponse = Console.ReadLine();
+                _response.Add(usersResponse);
             }
 
-            foreach(string item in _response){
-                Console.WriteLine(item);
+            Console.WriteLine(" ");
+
+            // foreach(string item in _response){
+            //     Console.WriteLine(item);
+            // }
+            int numberOfItems = _response.Count;
+            Console.WriteLine($"You have {numberOfItems} on your list");
+            Console.WriteLine("Would you like to add anymore items to the list (Y or N)?");
+            string addMore = Console.ReadLine();
+
+            if(addMore.ToUpper() == "Y"){
+                Console.WriteLine(" ");
+                Console.WriteLine("How many more items do you want to add");
+                int addItems = int.Parse(Console.ReadLine());
+
+                for (int x = 0; x < addItems; x++){
+                    Console.Write("> ");
+                    _response.Add(Console.ReadLine());
+
+                    
+                    }
+                    numberOfItems = _response.Count;
+                    Console.WriteLine($"You now have {numberOfItems} on your list");
+
+                    Console.WriteLine(" ");
+                    end("list activity"); 
             }
-            end("list activity");
-        }
+            else{
+              Console.WriteLine(" ");
+            end("list activity");  
+            }
 
 
+                
+        
+    }
+            
 }
+
+
