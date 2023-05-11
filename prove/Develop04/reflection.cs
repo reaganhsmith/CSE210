@@ -23,7 +23,7 @@ public class Reflection : Activity {
         _ponder.Add("How can you keep this experience in mind in the future?");
     }
 
-    public string getRandom(List<string> myList) {
+public string getRandom(List<string> myList) {
         Random random = new Random();
         int randomIndex = random.Next(0, myList.Count);
         string randomItem = myList[randomIndex];
@@ -44,7 +44,8 @@ public class Reflection : Activity {
 
     public void runActivity() {
         AddToList();
-
+        Console.WriteLine("Welcome to the REFLECTION activity!");
+        Console.WriteLine(" ");
         intro();
         wait(3);
         Console.WriteLine("Please consider the following prompt:");
@@ -55,7 +56,7 @@ public class Reflection : Activity {
         Console.WriteLine("When you have something in mind press enter to continue.");
         Console.ReadLine();
         Console.WriteLine(" ");
-        Console.WriteLine("Now ponder on the following questions and how they relate to your experience");
+        Console.Write("Now ponder on the following questions and how they relate to your experience...");
         countDown(5);
 
         Console.Clear();
@@ -65,21 +66,17 @@ public class Reflection : Activity {
         wait(3);
         _askPonderQuestions();  
         wait(3);
-        
-        int timer = getTimer();
-        Console.Clear();
-        DateTime currentTime = DateTime.Now;
-        DateTime futureTime = currentTime.AddSeconds(timer);
 
-        if (currentTime < futureTime)
+        int timer = getTimer();
+       DateTime endTime = DateTime.Now.AddSeconds(timer);
+        while (DateTime.Now < endTime)
             {
             _askPonderQuestions();  
             wait(3);
             }
+            Console.Clear();
 
-            Console.WriteLine("Well done!");
-            wait(2);
-            Console.WriteLine($"you have completed {timer} seconds.");
+            end("Reflect activity");
         }
 
         

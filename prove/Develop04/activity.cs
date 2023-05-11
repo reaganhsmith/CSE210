@@ -34,6 +34,16 @@ public class Activity{
         Console.WriteLine("Get ready...");
     }
 
+    public void end(string activityName){
+        Console.WriteLine(_endMessage);
+        wait(2);
+        Console.WriteLine($"You have completed {_timer} seconds of the {activityName}");
+        Thread.Sleep(4000);
+        Console.Clear();
+    }
+
+    
+
     public void wait(int duration){
         for (int i =0; i < duration; i++){
                   Console.Write("/");
@@ -65,6 +75,8 @@ public class Activity{
             Thread.Sleep(1000);
                   
             }
-            
+
         }
+
+
 }

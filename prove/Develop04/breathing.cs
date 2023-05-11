@@ -6,6 +6,10 @@ public class Breathing : Activity{
     }
 
     public void runActivity(){
+
+        Console.WriteLine("Welcome to the BREATH activity!");
+        Console.WriteLine(" ");
+
         intro();
         wait(3);
 
@@ -22,13 +26,11 @@ public class Breathing : Activity{
 
             Console.Write("Now breath out... ");
             countDown(4);
-            Console.Write("\b "); 
+            Console.WriteLine("\b "); 
             Console.WriteLine(" ");
             }
 
-            Console.WriteLine("Well done!");
-            wait(2);
-            Console.WriteLine($"You have completed {timer} seconds of the breathing activty");
+            end("breath activity");
         }
         
 }

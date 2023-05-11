@@ -19,7 +19,7 @@ class Program
         // Breathing breathing = new Breathing();
         
         // Listing listing = new Listing();
-        string end = "Thank you for joining us today:)";
+        string end = "Well done!:)";
         int timer = 0;
         while(userInput != 4){
             foreach(string menuItem in menu){
@@ -50,6 +50,11 @@ class Program
 
              if(userInput == 3)
              {
+                Console.Clear();
+                string intro2 = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
+
+                Listing list = new Listing(intro2, end, timer);
+                list.runActivity();
                 
             }
         }
