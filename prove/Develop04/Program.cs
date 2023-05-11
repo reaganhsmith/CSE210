@@ -19,8 +19,8 @@ class Program
         // Breathing breathing = new Breathing();
         
         // Listing listing = new Listing();
-
-
+        string end = "Thank you for joining us today:)";
+        int timer = 0;
         while(userInput != 4){
             foreach(string menuItem in menu){
                 Console.WriteLine(menuItem);
@@ -30,7 +30,10 @@ class Program
 
             if(userInput == 1)
             {
-
+                Console.Clear();
+                string intro = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
+                Breathing breath = new Breathing(intro, end, timer);
+                breath.runActivity();
 
             }
 
@@ -38,9 +41,8 @@ class Program
              {
                 Console.Clear();
                 string intro1 = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.";
-                string end1 = "Thank you for joining us today:)";
-                int timer = 3;
-                Reflection reflection = new Reflection(intro1, end1, timer);
+                
+                Reflection reflection = new Reflection(intro1, end, timer);
                 reflection.runActivity();
 
             }

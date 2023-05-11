@@ -40,22 +40,7 @@ public class Reflection : Activity {
         Console.WriteLine($"---{prompt}---");
     }
 
-    public void countdown(){
-        int countdownSeconds = 5; // Set the countdown duration in seconds
-        TimeSpan remainingTime = TimeSpan.FromSeconds(countdownSeconds);
-
-        // Start the countdown timer
-        while (remainingTime.TotalSeconds > 0)
-        {
-            Console.Write("You may begin in: {0}", remainingTime.ToString(@"ss"));
-            Console.CursorLeft = 0;
-
-            Thread.Sleep(1000); // Sleep for 1 second
-
-            remainingTime = remainingTime.Subtract(TimeSpan.FromSeconds(1));
-        }
-
-    }
+    
 
     public void runActivity() {
         AddToList();
@@ -71,7 +56,7 @@ public class Reflection : Activity {
         Console.ReadLine();
         Console.WriteLine(" ");
         Console.WriteLine("Now ponder on the following questions and how they relate to your experience");
-        countdown();
+        countDown(5);
 
         Console.Clear();
         _askPonderQuestions();  
@@ -80,6 +65,7 @@ public class Reflection : Activity {
         wait(3);
         _askPonderQuestions();  
         wait(3);
+        
         int timer = getTimer();
         Console.Clear();
         DateTime currentTime = DateTime.Now;

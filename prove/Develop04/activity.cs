@@ -53,4 +53,18 @@ public class Activity{
                   Console.Write("\b");
             }
     }
+
+          public void countDown(int time)
+      {
+            for (int i = time; i > 0; i--)
+            {
+            Console.Write("\b"); // Erase the + character
+
+            Console.Write($"{i}");
+
+            Thread.Sleep(1000);
+                  
+            }
+            
+        }
 }
