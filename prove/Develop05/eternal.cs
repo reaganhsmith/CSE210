@@ -3,13 +3,16 @@ public class Eternal : Goals{
 
     }
 
-    public override void Display()
+    public override void Display(int x)
     {
-            Console.WriteLine(" ");
             Console.WriteLine("The goals are: ");
-            Console.WriteLine($"[X] {_name} ({_description})");
-            Console.WriteLine(" ");
+            Console.WriteLine($"{x}. [ ] {_name} ({_description})");
 
+    }
+
+    public override string Format()
+    {
+        return $"Eternal Goal: {_name}, {_description}, {_points}";
     }
 
     public override int CompleteGoal()

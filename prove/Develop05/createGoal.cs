@@ -1,6 +1,5 @@
 public class createGoal{
     public List<Goals> GoalList = new List<Goals>();
-
     public string _input;
     public int _totalPoints = 0;
 
@@ -84,8 +83,11 @@ public class createGoal{
     }
 
     public void DisplayGoals(){
+        Console.WriteLine(GoalList.Count());
+        int x = 1;
         foreach(Goals goal in GoalList){
-            Console.WriteLine(goal);
+            goal.Display(x);
+            x+=1;
         }
     }
 
@@ -93,10 +95,11 @@ public class createGoal{
     public void Save(){
         Console.WriteLine("What would you like to name the file (end it in .txt): ");
         string fileName = Console.ReadLine();
+
         using (StreamWriter writer = new StreamWriter(fileName, true))
         {
             foreach (Goals goal in GoalList){
-             writer.WriteLine(goal);
+             writer.WriteLine(goal.Format());
              writer.WriteLine(" ");
             }
         }

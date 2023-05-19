@@ -6,21 +6,19 @@ public class SimpleGoal : Goals{
 
     }
 
-    public override void Display(){
+    public override void Display(int x){
 
 
 
         if(_completed){
-            Console.WriteLine(" ");
             Console.WriteLine("The goals are: ");
-            Console.WriteLine($"[X] {_name} ({_description})");
+            Console.WriteLine($"{x}. [X] {_name} ({_description})");
             Console.WriteLine($"You have {_points} points");
-            Console.WriteLine(" ");
         }
         else{
             Console.WriteLine(" ");
             Console.WriteLine("The goals are: ");
-            Console.WriteLine($"[ ]{_name} ({_description})"); 
+            Console.WriteLine($"{x}. [ ]{_name} ({_description})"); 
             Console.WriteLine(" ");
         }
     }

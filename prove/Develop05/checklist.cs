@@ -12,22 +12,20 @@ public class Checklist : Goals
         _bonus = bonus;
     }
 
-    public override void Display(){
+    public override void Display(int x){
         if(_completed){
-            Console.WriteLine(" ");
             Console.WriteLine("The goals are: ");
-            Console.WriteLine($"[X]");
+            Console.WriteLine($"{x}. [X] {_name} ({_description})");
             Console.WriteLine($"Current completed: {_currentGoal}/{_countGoal}");
-            Console.WriteLine($"You have points now");
-            Console.WriteLine(" ");
+
+            Console.WriteLine($"You have points now"); 
 
         }
         else{
-            Console.WriteLine(" ");
             Console.WriteLine("The goals are: ");
-            Console.WriteLine($"[ ]"); 
+            Console.WriteLine($"{x}. [ ] {_name} ({_description})"); 
             Console.WriteLine($"Current completed: {_currentGoal}/{_countGoal}");
-            Console.WriteLine(" ");
+
         }
 
     }

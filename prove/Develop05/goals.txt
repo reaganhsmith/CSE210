@@ -1,0 +1,8 @@
+simple Goal:read, read more books, 200, False
+ 
+simple Goal:read, read more, 200, False
+ 
+Eternal Goal: temple, go more, 250
+ 
+ 
+ 
