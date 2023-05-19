@@ -4,6 +4,19 @@ public class createGoal{
     public int _totalPoints = 0;
 
     public void create(){
+
+        Console.WriteLine(" ");
+            Console.WriteLine("Here is a brief description on what each goal means:");
+            Console.WriteLine("Simple Goal: A simple goal is a goal that must be completed once before it is marked as complete. Ex: run a marathon.");
+            Console.WriteLine("Eternal Goal: These goals are things we should constantly be doing throughout or life. Ex: read scriptures.");
+            Console.WriteLine("CheckList Gooal: These are goals that we must do a few times before they are completed. Ex: exercise for 30 min for 4 days straight. ");
+            Console.WriteLine(" "); 
+            countDown(15);
+
+            
+            
+
+            Console.Clear();
         List<string> menu = new List<string>{
             "-----------------------------------------------",
             "Goal options:",
@@ -24,7 +37,7 @@ public class createGoal{
         string goalName;
         string desc; 
         int points;
-
+    
         if (userInput == 1){
             
             Console.WriteLine("What is the name of the Goal: ");
@@ -78,7 +91,7 @@ public class createGoal{
             Checklist checklist = new Checklist(goalName, desc, points, completed, 0, bonus);
 
             GoalList.Add(checklist);
-        }  
+        } 
 
     }
 
@@ -134,6 +147,21 @@ public class createGoal{
     
     }
 
+
+
+    public void countDown(int time)
+      {
+        for (int i = time; i > 0; i--)
+        {
+        Console.Write("\b"); // Erase the + character
+        Console.Write("\b");
+        Console.Write($"{i}");
+
+        Thread.Sleep(1000);
+                
+        }
+
+        }
 
 
 
