@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Address address1 = new Address("112233 Chocolate Waffles", "Breaky", "WA", "US");
+        Address address1 = new Address("112233 Waffles Avenue ", "Breaky", "WA", "US");
         Customer customer1 = new Customer("Mac Howzer", address1);
 
         Product product1 = new Product("lazy Dayz Graphic tee", "A12QE0", 29.99, 2);
@@ -20,10 +20,12 @@ class Program
 
         Console.WriteLine(" ");
         Console.WriteLine(order1.packageLabel());
-        Console.WriteLine(" ");
         Console.WriteLine(order1.shippingLabel());
+        Console.WriteLine(" ");
         Console.WriteLine($"Total Price: ${order1.totalPrice()}");
         Console.WriteLine(" ");
+
+
 
 
     }

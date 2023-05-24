@@ -20,6 +20,6 @@ class Address
 
     public string GetAddress()
     {
-        return $"{_address}\n {_city},{_state} {_country}";
+        return $"{_address}\n{_city},{_state} {_country}";
     }
 }
