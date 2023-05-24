@@ -40,6 +40,6 @@ class Order
     public string shippingLabel()
     {
         
-        return $"---------------------\nShipping Label:\nName: {customer.Name}\nAddress:\n{customer.Address.GetAddress()}\n---------------------";
+        return $"---------------------\nShipping Label:\nName: {customer.Name}\n---------------------\nAddress:\n{customer.Address.GetAddress()}\n---------------------";
     }
 }
