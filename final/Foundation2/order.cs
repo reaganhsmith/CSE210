@@ -1,11 +1,11 @@
 class Order
 {
     private List<Product> products;
-    private Customer _customer;
+    private Customer customer;
 
     public Order(Customer customer)
     {
-        _customer = customer;
+        this.customer = customer;
         products = new List<Product>();
     }
 
@@ -22,7 +22,7 @@ class Order
             totalPrice += product.Price * product.Quantity;
         }
 
-        totalPrice += _customer.Address.IsInUSA() ? 5 : 35;
+        totalPrice += customer.GetShippingCost();
 
         return totalPrice;
     }
@@ -39,6 +39,6 @@ class Order
 
     public string shippingLabel()
     {
-        return $"Shipping Label:\nName: {_customer.Name}\nAddress:\n{_customer.Address.GetFullAddress()}";
+        return $"Shipping Label:\nName: {customer.Name}\nAddress:\n{customer.Address.GetAddress()}";
     }
 }

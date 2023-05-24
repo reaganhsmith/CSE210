@@ -20,6 +20,7 @@ class Program
 
         Console.WriteLine(" ");
         Console.WriteLine(order1.packageLabel());
+        Console.WriteLine(" ");
         Console.WriteLine(order1.shippingLabel());
         Console.WriteLine($"Total Price: ${order1.totalPrice()}");
         Console.WriteLine(" ");
